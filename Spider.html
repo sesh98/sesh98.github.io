@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JackPot</title>
+</head>
+<style type="text/css">
+	h1{
+		border: outset;
+		font-size: 200%;
+		font-family: sans-serif;
+		color:red;
+		background-color: black;
+		border-color: red;
+		text-align: center;
+		padding: 10px;
+	}
+	body{
+		background-color: grey;
+	}
+	#boxone{
+		padding: 20px;
+		text-align: center;
+		font-size: 200%;
+	}
+	#boxtwo{
+		padding: 20px;
+		text-align: center;
+		font-size: 200%;	
+	}
+	#boxthree{
+		padding: 20px;
+		text-align: center;
+		font-size: 200%;
+	}
+	#but{
+		padding: 30px;
+		text-align: center;
+		font-size: 200%;
+		text-shadow: 2px 2px #FF0000;
+	}
+	#points{
+		padding: 20px;
+		font-size: 200%;
+		text-align: center;
+	}
+</style>
+<body>
+<h1>Lucky Spinner</h1>
+<br><br><br><br>
+<input type="number" id="boxone"></input>
+<input type="number" id="boxtwo"></input>
+<input type="number" id="boxthree"></input>
+<br><br><br>
+<button onclick="Sesh()" id="but" style="margin-left: 46%;">Spin</button>
+<br><br><br><br>
+<b style="font-size: 200%">Points</b>;
+<input type="number" id="points"></input>
+<script type="text/javascript">
+	function Sesh(){
+		var x=Math.floor((Math.random()*10)+1); 
+		var y=Math.floor((Math.random()*10)+1);
+		var z=Math.floor((Math.random()*10)+1);
+		document.getElementById("boxone").value=x;
+		document.getElementById("boxtwo").value=y;
+		document.getElementById("boxthree").value=z;
+		if(x==y&&y==z){
+			document.getElementById("points").value+=5;
+
+		}
+	}
+
+</script>
+
+</body>
+</html>
