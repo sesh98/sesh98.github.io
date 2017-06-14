@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Cherry JackPot Game</title>
+<meta name="viewport" content="width=device-width, initial-scale=0.8">
+
+	<title>Cherry JackPot game</title>
 </head>
 <style type="text/css">
 	h1{
@@ -57,17 +58,26 @@
 <b style="font-size: 200%">Points</b>;
 <input type="number" id="points"></input>
 <script type="text/javascript">
+var clock;
 	function Sesh(){
-		var x=Math.floor((Math.random()*10)+1); 
-		var y=Math.floor((Math.random()*10)+1);
-		var z=Math.floor((Math.random()*10)+1);
-		document.getElementById("boxone").value=x;
-		document.getElementById("boxtwo").value=y;
-		document.getElementById("boxthree").value=z;
-		if(x==y&&y==z){
-			document.getElementById("points").value+=5;
-
-		}
+		var ticks=0;
+		var int=1;
+		clock=setInterval(function(){
+			ticks++;
+			var x=Math.floor((Math.random()*10)+1); 
+			var y=Math.floor((Math.random()*10)+1);
+			var z=Math.floor((Math.random()*10)+1);
+			document.getElementById("boxone").value=x;
+			document.getElementById("boxtwo").value=y;
+			document.getElementById("boxthree").value=z;
+			if(ticks==100){
+				clearInterval(clock);
+				if(x==y&&y==z){
+					document.getElementById("points").value+=5;
+				}	
+			}
+		},1);
+		
 	}
 
 </script>
